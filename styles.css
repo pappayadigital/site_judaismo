@@ -1,0 +1,217 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 20px 0;
+    color: #fff;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    background-image: url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Torna o fundo fixo, criando o efeito parallax */
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+    min-height: 500px;
+}
+
+.banner-text h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+    color: white;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Merriweather', serif;
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.illustration-right {
+    float: right;
+    margin: 0 0 20px 20px;
+    width: 45%;
+}
+
+.illustration-left {
+    float: left;
+    margin: 0 20px 20px 0;
+    width: 45%;
+}
+
+.illustration-center {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+/* Limpar floats */
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Acessibilidade */
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3498db;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .illustration-right, .illustration-left {
+        float: none;
+        margin: 20px auto;
+        display: block;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .banner-text h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Aplica um efeito de zoom suave ao passar o mouse */
+img {
+    transition: transform 0.5s ease;
+}
+
+img:hover {
+    transform: scale(1.1); /* Aumenta a imagem em 10% */
+}
+
+/* Flutuação contínua em imagens */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+img {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Efeito de deslize lateral para imagens */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.slide-in-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
